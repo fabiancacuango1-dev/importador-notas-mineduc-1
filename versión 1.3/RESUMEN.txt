@@ -1,0 +1,151 @@
+✓ PROYECTO COMPLETADO: Instalador v1.3
+═══════════════════════════════════════════════════════════════════════════════
+
+Tu carpeta "versión 1.3" está lista con todo lo necesario para compilar el instalador
+profesional de Importador de Notas Mineduc.
+
+CONTENIDO GENERADO:
+═══════════════════════════════════════════════════════════════════════════════
+
+📁 versión 1.3/
+│
+├── 📄 setup.iss                    ⭐ ARCHIVO PRINCIPAL
+│   └─ Script Inno Setup con:
+│      ✓ Detección de navegadores (Chrome, Edge, Firefox)
+│      ✓ Ventana de selección de navegador
+│      ✓ Apertura automática de página de extensiones
+│      ✓ Instrucciones guiadas para el usuario
+│      ✓ Compatible con Windows 7-11 (32 y 64 bits)
+│      ✓ Código limpio y bien comentado en Pascal Script
+│
+├── 📁 scripts/
+│   └── 🔧 activar_extension.cmd
+│       └─ Script batch para abrir extensiones desde acceso directo
+│
+├── 📁 extension/                   ⚠️ CARPETA VACÍA (Debes copiar tus archivos)
+│   ├─ (Copia aquí manifest.json)
+│   ├─ (Copia aquí background.js)
+│   ├─ (Copia aquí content.js)
+│   ├─ (Copia aquí popup.html, popup.js, style.css)
+│   └─ (Copia aquí icons/ y otros archivos)
+│
+├── 📁 output/                      ⚠️ CARPETA VACÍA (Se generará Setup.exe)
+│   └─ (aquí aparecerá Setup.exe después de compilar)
+│
+├── 📖 README.md
+│   └─ Visión general del proyecto y guía rápida
+│
+├── 📖 COMPILACION.md
+│   └─ Instrucciones detalladas paso a paso
+│
+├── 📖 INSTRUCCIONES_EXTENSION.txt
+│   └─ Cómo copiar tu extensión compilada
+│
+└── 🔨 BUILD.bat
+    └─ Script automático para compilar (ejecutar en Windows)
+
+
+PRÓXIMOS PASOS:
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  LEE Y SIGUE: INSTRUCCIONES_EXTENSION.txt
+   └─ Explica cómo copiar tu extensión compilada
+
+2️⃣  COMPILAR EN WINDOWS:
+   └─ Lee COMPILACION.md para instrucciones detalladas
+
+3️⃣  OPCIONES DE COMPILACIÓN:
+   ├─ A) Usa Inno Setup interfaz gráfica (más fácil)
+   ├─ B) Ejecuta BUILD.bat en Windows (automático)
+   └─ C) Usa comando manual: ISCC.exe setup.iss
+
+4️⃣  RESULTADO:
+   └─ Archivo Setup.exe en carpeta: output/
+
+
+CAMBIOS REALIZADOS EN setup.iss:
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ Versión actualizada a 1.3.0
+✓ Flujo guiado profesional sin registro oculto en navegador
+✓ Detección por Registro de Windows (HKCU, HKLM, HKLM32, HKLM64)
+✓ Página de selección de navegador (solo detectados)
+✓ Apertura automática de:
+  - Chrome: chrome://extensions/
+  - Edge: edge://extensions/
+  - Firefox: about:addons
+✓ Instrucciones claras para activar extensión descomprimida
+✓ Acceso directo "Activar extensión" en menú inicio
+✓ Sistema de licencia PRESERVADO (30 estudiantes + pre-activación)
+✓ Compatible Windows 7-11, 32 y 64 bits
+✓ Código limpio, profesional, comentado
+
+
+CARACTERÍSTICAS IMPORTANTES:
+═══════════════════════════════════════════════════════════════════════════════
+
+🛡️  SEGURIDAD:
+   ✓ Sin comportamientos sospechosos para antivirus
+   ✓ Sin modificaciones ocultas del navegador
+   ✓ Sin descargas ocultas
+   ✓ Sin inyección de procesos
+
+🎨 PROFESIONALIDAD:
+   ✓ Interfaz moderna de Inno Setup
+   ✓ Mensajes legibles en es español
+   ✓ Flujo guiado paso a paso
+   ✓ Errores claros y validaciones
+
+🔧 COMPATIBILIDAD:
+   ✓ Windows 7, 8, 10, 11
+   ✓ Sistemas 32 y 64 bits
+   ✓ Computadoras antiguas y modernas
+   ✓ Chrome, Edge, Firefox
+
+⚡ AUTOMATIZACIÓN:
+   ✓ Detección automática de navegadores
+   ✓ Apertura automática de página de extensiones
+   ✓ Script de compilación automática (BUILD.bat)
+
+
+ARCHIVOS LISTOS PARA USAR:
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ setup.iss                 — 460 líneas de código Pascal Script profesional
+✓ scripts/activar_extension.cmd — Script batch robusto con fallbacks
+✓ BUILD.bat                 — Compilador automático
+✓ README.md                 — Documentación rápida
+✓ COMPILACION.md            — Guía completa de compilación
+✓ INSTRUCCIONES_EXTENSION.txt — Pasos para copiar ext compilada
+
+
+VALIDACIÓN DE REQUISITOS:
+═══════════════════════════════════════════════════════════════════════════════
+
+1. ✓ Instalación del programa → Copia archivos en {app}\extension
+2. ✓ Copia de la extensión → {app}\extension incluido
+3. ✓ Detección de navegadores → Función QueryAppPath + fallback
+4. ✓ Ventana de selección → BrowserChoicePage solo navegadores detectados
+5. ✓ Apertura automática → OpenBrowserExtensionsPage en wpFinished
+6. ✓ Mensaje de instrucciones → ShowActivationInstructions()
+7. ✓ Acceso directo → {group}\Activar extensión en [Icons]
+8. ✓ Licencia preservada → SaveLicenseKeyToExtension() intacto
+9. ✓ Compatibilidad W7-11 → MinVersion=6.1sp1, ArchitecturesAllowed=x86 x64
+10. ✓ Compatibilidad antivirus → Sin comportamientos maliciosos
+11. ✓ Código limpio → Pascal Script profesional con comentarios
+
+
+TODO LISTO PARA USAR:
+═══════════════════════════════════════════════════════════════════════════════
+
+La carpeta "versión 1.3" contiene TODO lo necesario para:
+
+1. EDITAR el script si necesitas cambios
+2. COMPILAR el Setup.exe en Windows
+3. DISTRIBUIR a tus usuarios
+
+═══════════════════════════════════════════════════════════════════════════════
+Creado: Marzo 2026
+Versión: 1.3.0
+Estado: ✓ COMPLETO Y LISTO PARA COMPILAR
+═══════════════════════════════════════════════════════════════════════════════

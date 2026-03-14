@@ -1,0 +1,106 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                   PREPARACIÓN DE LA EXTENSIÓN COMPILADA                        ║
+║                                                                               ║
+║                   Importador de Notas Mineduc v1.3                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+PASO 1: COMPILAR LA EXTENSIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Si aún no has compilado la extensión, hazlo ahora:
+
+1. Ve a la carpeta raíz del proyecto
+2. Ejecuta: npm run build:prod
+3. Los archivos compilados aparecerán en: installer/dist/extension/
+
+PASO 2: COPIAR ARCHIVOS A ESTA CARPETA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Copia TODOS los archivos compilados desde:
+
+   installer/dist/extension/*
+
+hacia esta carpeta:
+
+   versión 1.3/extension/
+
+Los archivos necesarios son:
+
+   ✓ manifest.json          (OBLIGATORIO - Metadatos de la extensión)
+   ✓ background.js          (Script de fondo)
+   ✓ content.js             (Script del contenido)
+   ✓ popup.html             (Interfaz del popup)
+   ✓ popup.js               (Lógica del popup)
+   ✓ style.css              (Estilos)
+   ✓ icons/                 (Carpeta de iconos)
+   ✓ Otros archivos JS      (All scripts de tu extensión)
+   ✓ Otros archivos CSS     (All estilos adicionales)
+
+PASO 3: VERIFICAR LA ESTRUCTURA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After copying, your folder structure should look like:
+
+   versión 1.3/
+   ├── setup.iss
+   ├── scripts/
+   │   └── activar_extension.cmd
+   ├── extension/            ← Los archivos deben estar aquí
+   │   ├── manifest.json     ✓ IMPORTANTE
+   │   ├── background.js
+   │   ├── content.js
+   │   ├── popup.html
+   │   ├── popup.js
+   │   ├── style.css
+   │   ├── icons/
+   │   └── (otros archivos)
+   └── output/               ← Se generará Setup.exe aquí
+
+
+PASO 4: COMPILAR EL INSTALADOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Una vez que los archivos estén en su lugar:
+
+OPCIÓN A - Interfaz Gráfica (Recomendado):
+   1. Abre Inno Setup
+   2. File → Open → Selecciona setup.iss
+   3. Build → Compile (o presiona F9)
+
+OPCIÓN B - Línea de Comandos:
+   1. Abre CMD en esta carpeta
+   2. Ejecuta: BUILD.bat
+
+OPCIÓN C - Línea de Comandos Avanzada:
+   1. Ejecuta: "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss
+
+═══════════════════════════════════════════════════════════════════════════════
+
+RESULTADO
+
+✓ El archivo Setup.exe se generará en: versión 1.3/output/
+✓ Estará listo para distribuir a tus usuarios
+✓ Los usuarios lo descargarán y ejecutarán en Windows
+✓ Seguirán los pasos guiados para instalar y activar
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PREGUNTAS FRECUENTES
+
+P: ¿Dónde encuentro los archivos compilados de la extensión?
+R: En: installer/dist/extension/ (después de ejecutar npm run build:prod)
+
+P: ¿Estoy copiando los archivos correctos?
+R: Sí, si ves manifiest.json en la carpeta extension/ está correcto.
+
+P: ¿Obtuve un error al compilar?
+R: Comprueba:
+   1. Inno Setup 6 está instalado
+   2. setup.iss existe en esta carpeta
+   3. manifest.json está en extension/
+   4. No hay caracteres especiales en nombres de archivos
+
+P: ¿Qué pasa si mi extensión tiene más carpetas o archivos?
+R: Cópialos todos tal cual. El instalador incluye recursesubdirs en setup.iss.
+
+═══════════════════════════════════════════════════════════════════════════════
