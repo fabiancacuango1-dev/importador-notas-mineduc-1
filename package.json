@@ -1,0 +1,29 @@
+{
+  "name": "importador-notas-mineduc",
+  "version": "1.1.1",
+  "description": "Importador de Notas Mineduc - Sistema de licencias y herramientas",
+  "private": true,
+  "scripts": {
+    "generar-licencias": "node generarLicencias.js",
+    "generar-licencias-500": "node generarLicencias.js 500",
+    "build:prod": "npx webpack --config installer/webpack/webpack.prod.js",
+    "build:manifest": "node installer/scripts/prepare-manifest.js",
+    "build:validate": "node installer/scripts/validate-build.js",
+    "build:all": "npm run build:prod && npm run build:manifest && npm run build:validate"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "jspdf": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "babel-loader": "^10.1.1",
+    "copy-webpack-plugin": "^14.0.0",
+    "javascript-obfuscator": "^5.3.0",
+    "terser-webpack-plugin": "^5.4.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1",
+    "webpack-obfuscator": "^3.6.0"
+  }
+}

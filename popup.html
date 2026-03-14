@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Importador de Notas</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 14px;
+        min-width: 320px;
+        color: #123;
+        background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+      }
+
+      h3 {
+        margin: 0 0 4px;
+        font-size: 16px;
+        color: #0f4aa1;
+      }
+
+      .subtitle {
+        margin: 0 0 12px;
+        font-size: 12px;
+        color: #4a5c79;
+        line-height: 1.4;
+      }
+
+      .section {
+        border: 1px solid #d6e5ff;
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 10px;
+        background: #fff;
+      }
+
+      .section-title {
+        margin: 0 0 8px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #0f4aa1;
+      }
+
+      button {
+        border: none;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        width: 100%;
+        transition: filter 0.15s;
+      }
+
+      button:hover { filter: brightness(0.96); }
+      button:active { transform: translateY(1px); }
+      button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+      #comprarWhatsAppBtn {
+        background: #25d366;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+
+      #activarLicenciaBtn {
+        background: #0f4aa1;
+        color: #fff;
+      }
+
+      #codigoLicenciaInput {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 9px 10px;
+        border: 1px solid #d6e5ff;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      #codigoLicenciaInput:focus {
+        outline: none;
+        border-color: #0f4aa1;
+        box-shadow: 0 0 0 2px rgba(15,74,161,0.15);
+      }
+
+      #state {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #4a5c79;
+        padding: 6px 8px;
+        border-radius: 6px;
+        background: #f0f4fa;
+        text-align: center;
+      }
+
+      #state.ok {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      #state.error {
+        background: #fce4ec;
+        color: #c62828;
+      }
+
+      .premium-badge {
+        display: none;
+        margin-top: 10px;
+        padding: 8px;
+        background: #e8f5e9;
+        border: 1px solid #a5d6a7;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        color: #2e7d32;
+      }
+
+      .premium-badge.visible { display: block; }
+
+      .help-text {
+        font-size: 11px;
+        color: #78909c;
+        text-align: center;
+        margin-top: 8px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>📋 Importador de Notas Mineduc</h3>
+    <p class="subtitle">
+      Carga notas desde Excel de forma masiva. Activa tu licencia para uso ilimitado.
+    </p>
+
+    <!-- Sección de compra -->
+    <div class="section">
+      <div class="section-title">🛒 Obtener licencia</div>
+      <button id="comprarWhatsAppBtn" type="button">💬 Comprar por WhatsApp</button>
+      <p class="help-text">
+        Solicita tu código de licencia. El pago se realiza por WhatsApp y recibirás tu código al instante.
+      </p>
+    </div>
+
+    <!-- Sección de activación -->
+    <div class="section">
+      <div class="section-title">🔑 Activar licencia</div>
+      <input id="codigoLicenciaInput" type="text" placeholder="Ej: MINEDUC-A1B2C3D4E5F6" maxlength="20" autocomplete="off" />
+      <button id="activarLicenciaBtn" type="button">Activar licencia</button>
+    </div>
+
+    <!-- Badge premium -->
+    <div id="premiumBadge" class="premium-badge">
+      ✅ Licencia Premium activa — Uso ilimitado
+    </div>
+
+    <div id="state">Estado: listo</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

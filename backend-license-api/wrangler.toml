@@ -1,0 +1,28 @@
+name = "mineduc-license-api"
+main = "worker.js"
+compatibility_date = "2026-03-10"
+
+[vars]
+ALLOWED_ORIGIN = "*"
+PAYPHONE_CHECKOUT_URL = "https://ppls.me/p7aXRq2flYO7ofkHtfhFlQ"
+PAYPHONE_API_URL = "https://pay.payphonetodoesposible.com/api/button/Prepare"
+PAYPHONE_RESPONSE_URL = "https://academico.educarecuador.gob.ec/"
+PAYPHONE_CURRENCY = "USD"
+PAYPHONE_AMOUNT_CENTS = "199"
+PAYPHONE_PAYMENT_BASE_URL = "https://pay.payphonetodoesposible.com"
+PENDING_PAYMENT_TTL_MINUTES = "30"
+PAYPAL_API_BASE_URL = "https://api-m.paypal.com"
+PAYPAL_AMOUNT_USD = "1.99"
+PAYPAL_CLIENT_ID = "AcP5sG6zt0TPAd0yeNfXz2em0SGXdpia_loExqa8BrDmhfZmi0kj5m3KG1zQE3p8lEZ5Ci7msCV2VUk1"
+PAYPAL_ENABLE_SANDBOX_FALLBACK = "true"
+
+[[kv_namespaces]]
+binding = "LICENSES_KV"
+id = "2173d5f08b3740ea856c1da62e30f15e"
+
+# Define secrets recomendados:
+# wrangler secret put PAYPHONE_WEBHOOK_SECRET
+# wrangler secret put PAYPHONE_API_TOKEN
+# wrangler secret put PAYPHONE_STORE_ID
+# wrangler secret put PAYPAL_CLIENT_ID
+# wrangler secret put PAYPAL_CLIENT_SECRET

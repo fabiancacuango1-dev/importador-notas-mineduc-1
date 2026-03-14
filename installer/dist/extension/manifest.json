@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Importador de Notas Mineduc",
+  "version": "1.1.1",
+  "description": "Carga notas desde Excel y las ingresa de forma masiva en Academico",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://academico.educarecuador.gob.ec/*",
+    "https://*.workers.dev/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://academico.educarecuador.gob.ec/*"
+      ],
+      "js": [
+        "sheetjs.min.js",
+        "licenseGuard.js",
+        "license.js",
+        "activate.js",
+        "paymentModal.js",
+        "premiumUI.js",
+        "formatHandler.js",
+        "bulkUploader.js",
+        "civicaAutoFill.js",
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

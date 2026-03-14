@@ -1,0 +1,235 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                  COMPILACIÓN AUTOMÁTICA EN GITHUB ACTIONS                      ║
+║          Setup.exe compilado automáticamente en la nube desde Mac               ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+✅ CONFIGURACIÓN COMPLETADA
+═════════════════════════════════════════════════════════════════════════════════
+
+Los siguientes archivos ya fueron creados y listos para usar:
+
+  📁 .github/workflows/
+  └── 📄 build.yml                 ← Workflow GitHub Actions completo
+
+  📄 GITHUB_ACTIONS_SETUP.md       ← Guía completa (LEE ESTO PRIMERO)
+  📄 GIT_QUICK_REFERENCE.md        ← Referencia rápida de comandos
+  🔧 setup-github-actions.sh       ← Script de configuración automática
+
+
+🚀 PRIMEROS PASOS (Sigue estos pasos en orden)
+═════════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Configurar Git (primera vez)
+──────────────────────────────────────
+
+Abre Terminal en tu Mac y ve a la carpeta del proyecto:
+
+    cd "/Path/To/importador-notas-mineduc"
+
+Opción A - Configuración manual:
+
+    git init
+    git config user.email "tu@email.com"
+    git config user.name "Tu Nombre"
+    git add .
+    git commit -m "Agrega GitHub Actions para compilación automática"
+
+Opción B - Configuración automática (recomendado):
+
+    bash setup-github-actions.sh
+
+Resultado:
+  ✓ Git inicializado
+  ✓ Cambios agregados
+  ✓ Primer commit creado
+
+
+PASO 2: Crear repositorio en GitHub
+────────────────────────────────────
+
+1. Abre: https://github.com/new
+2. Nombre: importador-notas-mineduc
+3. Descripción: Sistema de instalación profesional para extensión
+4. Hace clic: "Create repository"
+5. Se abre una página con instrucciones
+
+Copia el HTTPS URL que aparece (parecido a esto):
+  https://github.com/TU_USUARIO/importador-notas-mineduc.git
+
+
+PASO 3: Conectar tu repo local con GitHub
+──────────────────────────────────────────
+
+En Terminal, ejecuta (reemplaza URL_DEL_REPO):
+
+    git remote add origin URL_DEL_REPO
+    git branch -M main
+    git push -u origin main
+
+Ejemplo completo:
+
+    git remote add origin https://github.com/luisfabian/importador-notas-mineduc.git
+    git branch -M main
+    git push -u origin main
+
+Si pide contraseña:
+  ✓ Usa Personal Access Token (PAT) en lugar de contraseña
+  ✓ Crea uno en: https://github.com/settings/tokens
+
+Resultado:
+  ✓ Repositorio conectado con GitHub
+  ✓ Archivos subidos a la nube
+
+
+PASO 4: Esperar compilación automática
+───────────────────────────────────────
+
+GitHub Actions se ejecuta automáticamente:
+
+1. Vuelve a tu repositorio en github.com
+2. Haz clic en "Actions" en la barra superior
+3. Verás: "Build Setup.exe - Importador de Notas Mineduc"
+4. Espera a que cambie de amarillo (en progreso) a verde (exitoso)
+
+Tiempo esperado: 3-5 minutos
+
+Resultado:
+  ✓ Setup.exe compilado exitosamente
+  ✓ Listo para descargar
+
+
+PASO 5: Descargar Setup.exe
+───────────────────────────
+
+1. En GitHub, ve a: Actions → Último workflow exitoso
+2. Baja hasta "Artifacts"
+3. Verás: ImportadorNotas-Setup-v1.3.0 (descargable)
+4. Haz clic para descargar
+5. Extrae el .zip para obtener Setup.exe
+
+¡Listo! Ya tienes tu Setup.exe compilado sin Windows 🎉
+
+
+📝 FLUJO DIARIO (Para cambios futuros)
+═════════════════════════════════════════════════════════════════════════════════
+
+1. Haz cambios a tus archivos en Mac
+
+2. Sube cambios a GitHub:
+
+    git add .
+    git commit -m "Descripción de cambios"
+    git push
+
+3. GitHub Actions se ejecuta automáticamente
+
+4. Descarga Setup.exe nuevamente desde Actions
+
+¡Así de simple! 🚀
+
+
+📊 MONITOREAR COMPILACIÓN
+═════════════════════════════════════════════════════════════════════════════════
+
+Ver estado en tiempo real:
+
+1. Abre tu repositorio en github.com
+2. Ve a "Actions" en la barra superior
+3. Verás todos los workflows con estados:
+
+   🟢 ✓ Exitoso (Setup.exe compilado)
+   🔴 ✗ Fallido (hay un error)
+   🟡 ⏳ En progreso (esperando...)
+
+Ver logs detallados:
+
+1. Haz clic en el workflow que quieras revisar
+2. Haz clic en "build-windows"
+3. Expande los pasos para ver detalles (muy útil para diagnosticar)
+
+
+⚠️ SI FALLA LA COMPILACIÓN
+═════════════════════════════════════════════════════════════════════════════════
+
+La razón más común: Archivos faltantes en versión 1.3/extension/
+
+SOLUCIÓN:
+
+1. Copia los archivos compilados de tu extensión:
+
+    cp -r installer/dist/extension/* "versión 1.3/extension/"
+
+2. Verifica que manifest.json esté presente:
+
+    ls "versión 1.3/extension/manifest.json"
+
+3. Sube cambios:
+
+    git add .
+    git commit -m "Agrega archivos compilados de extensión"
+    git push
+
+4. GitHub Actions se ejecuta nuevamente
+5. Descarga Setup.exe cuando esté listo
+
+
+🎯 CÓMO FUNCIONA (Explicación técnica)
+═════════════════════════════════════════════════════════════════════════════════
+
+Cuando haces git push:
+
+1. GitHub recibe tus archivos
+2. Lee el archivo .github/workflows/build.yml
+3. Crea una máquina virtual Windows en la nube
+4. Instala Inno Setup automáticamente
+5. Ejecuta: iscc versión\ 1.3/setup.iss
+6. Genera Setup.exe en versión 1.3/output/
+7. Sube Setup.exe como "artifact" descargable
+8. Envía email si falla (opcional)
+
+Todo en 3-5 minutos. ¡Sin necesidad de Windows local! 🎉
+
+
+📚 ARCHIVOS DE REFERENCIA
+═════════════════════════════════════════════════════════════════════════════════
+
+GITHUB_ACTIONS_SETUP.md
+  → Lee esto para entender todo con detalle
+  → Troubleshooting y personalizaciones avanzadas
+
+GIT_QUICK_REFERENCE.md
+  → Referencia rápida de comandos Git
+  → Soluciones a errores comunes
+  → Útil tenerlo a mano
+
+.github/workflows/build.yml
+  → Archivo de configuración principal
+  → Puedes editarlo para personalizar compilación
+
+
+✨ VENTAJAS DE ESTA CONFIGURACIÓN
+═════════════════════════════════════════════════════════════════════════════════
+
+✓ Compila automáticamente en la nube (sin Windows local)
+✓ Funciona desde Mac, Linux o Windows
+✓ Histórico de compilaciones en GitHub
+✓ Artifacts descargables fácilmente
+✓ Notificaciones automáticas de fallos
+✓ Control de versiones de Setup.exe
+✓ Colaborativo si trabajas en equipo
+✓ Gratis en GitHub (dentro de límites)
+
+
+🎓 PRÓXIMOS PASOS RECOMENDADOS
+═════════════════════════════════════════════════════════════════════════════════
+
+1. Sigue PASO 1 hasta PASO 5 arriba
+2. Lee GITHUB_ACTIONS_SETUP.md para entender todo
+3. Personaliza build.yml si necesitas cambios
+4. Crea releases automáticas (ver GITHUB_ACTIONS_SETUP.md)
+5. Comparte tu Setup.exe compilado con usuarios
+
+
+═════════════════════════════════════════════════════════════════════════════════
+¿Listo? ¡Empieza en PASO 1 arriba! 🚀
+═════════════════════════════════════════════════════════════════════════════════

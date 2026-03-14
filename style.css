@@ -1,0 +1,734 @@
+.mineduc-hidden {
+  display: none !important;
+}
+
+#mineducNotasLauncher {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 2147483647;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background: linear-gradient(140deg, #0f4aa1, #1f74e7);
+  box-shadow: 0 14px 30px rgba(15, 74, 161, 0.35);
+  cursor: pointer;
+}
+
+#mineducNotasLauncher:hover {
+  filter: brightness(1.04);
+}
+
+#mineducNotasLauncher:active {
+  transform: translateY(1px);
+}
+
+#mineducNotasPanel {
+  position: fixed;
+  right: 22px;
+  top: 68px;
+  width: 360px;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 90px);
+  overflow: auto;
+  z-index: 2147483647;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #d6e5ff;
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(14, 61, 140, 0.25);
+  padding: 14px;
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+  color: #123;
+}
+
+.mineduc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mineduc-head h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #0f4aa1;
+}
+
+#mineducPanelClose {
+  border: 1px solid #d6e5ff;
+  background: #eef5ff;
+  color: #0f4aa1;
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.mineduc-status,
+.mineduc-loaded {
+  margin: 7px 0;
+  font-size: 12px;
+  line-height: 1.35;
+  background: #eef5ff;
+  border: 1px solid #d8e7ff;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.mineduc-teacher {
+  margin: 7px 0;
+  font-size: 12px;
+  line-height: 1.35;
+  background: #f7f2e8;
+  border: 1px solid #ead8b4;
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #6f4d12;
+}
+
+.mineduc-teacher.warn {
+  background: #fff3f3;
+  border-color: #f2c2c2;
+  color: #9e1f1f;
+}
+
+.mineduc-status.ok {
+  color: #146437;
+}
+
+.mineduc-loaded.ok {
+  color: #146437;
+}
+
+.mineduc-status.warn {
+  color: #9d4b06;
+}
+
+.mineduc-loaded.warn {
+  color: #9d4b06;
+}
+
+.mineduc-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+#mineducSelectExcelBtn,
+#mineducRunImportBtn,
+#mineducTemplateBtn,
+#mineducClearLoadBtn,
+#mineducPayphoneBtn,
+#mineducPaypalBtn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#mineducTemplateBtn {
+  background: #fff4dd;
+  color: #8a5800;
+}
+
+#mineducSelectExcelBtn {
+  background: #eaf2ff;
+  color: #0f4aa1;
+}
+
+#mineducRunImportBtn {
+  background: #dff1e5;
+  color: #136336;
+  grid-column: 1 / -1;
+}
+
+#mineducRunImportBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.mineduc-options {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.mineduc-advanced {
+  margin: 8px 0;
+  border: 1px solid #d7e7ff;
+  border-radius: 10px;
+  padding: 6px 8px;
+  background: #fbfdff;
+}
+
+.mineduc-advanced summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1b4f9a;
+}
+
+#mineducClearLoadBtn {
+  background: #fff3f3;
+  color: #9a2a2a;
+  border: 1px solid #f4c5c5;
+}
+
+.mineduc-help {
+  display: block;
+  color: #4a5c79;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.mineduc-billing {
+  margin-top: 10px;
+  border: 1px solid #d5e3ff;
+  border-radius: 10px;
+  padding: 12px;
+  background: #f8fcff;
+}
+
+.mineduc-billing h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #0f4aa1;
+}
+
+.mineduc-billing-status {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.mineduc-billing-status.ok {
+  color: #146437;
+}
+
+.mineduc-billing-status.warn {
+  color: #9d4b06;
+}
+
+.mineduc-billing-status.blocked {
+  color: #9e1f1f;
+  font-weight: 700;
+}
+
+.mineduc-pay-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+#mineducPayphoneBtn {
+  background: linear-gradient(145deg, #102a56, #1c5fb8);
+  color: #fff;
+  box-shadow: 0 10px 18px rgba(28, 95, 184, 0.22);
+}
+
+#mineducPaypalBtn {
+  background: linear-gradient(145deg, #f7c64d, #ffdf8f);
+  color: #2b2b2b;
+  border: 1px solid #f2cb61;
+  box-shadow: 0 8px 14px rgba(189, 137, 25, 0.2);
+  letter-spacing: 0.2px;
+  font-weight: 800;
+}
+
+.mineduc-feature-list {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 10px;
+}
+
+.mineduc-feature-list span {
+  display: block;
+  border-radius: 8px;
+  padding: 7px 9px;
+  background: #eff5ff;
+  border: 1px solid #d7e5ff;
+  color: #23416c;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.mineduc-license-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mineduc-license-input {
+  flex: 1;
+  border: 1px solid #bcd;
+  color: #123;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.mineduc-activate-btn {
+  background: #0f4aa1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mineduc-activate-btn:hover {
+  background: #0d3d8a;
+}
+
+.mineduc-whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+}
+
+.mineduc-whatsapp-btn:hover {
+  background: #1fb855;
+}
+
+/* Format selector row */
+.mineduc-format-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 6px;
+  padding: 6px 0;
+}
+
+.mineduc-format-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #23416c;
+  white-space: nowrap;
+}
+
+.mineduc-format-select {
+  flex: 1;
+  padding: 7px 10px;
+  border: 1px solid #c5d4e8;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a365d;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.mineduc-format-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+@media (max-width: 640px) {
+  #mineducNotasPanel {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    top: 68px;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   BOTÓN PREMIUM (en la barra de acciones)
+   ═══════════════════════════════════════════════ */
+
+.mineduc-premium-btn {
+  background: linear-gradient(145deg, #f59e0b, #f97316) !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.mineduc-premium-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.45);
+}
+
+.mineduc-premium-btn:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════
+   BADGE PREMIUM (junto al título)
+   ═══════════════════════════════════════════════ */
+
+.mineduc-premium-badge {
+  display: inline-block;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid #86efac;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER PREMIUM (parte inferior del panel)
+   ═══════════════════════════════════════════════ */
+
+.mineduc-premium-footer {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #065f46;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.mineduc-premium-footer small {
+  font-weight: 400;
+  font-size: 11px;
+  color: #047857;
+}
+
+.mineduc-premium-footer-check {
+  color: #059669;
+  font-size: 15px;
+  margin-right: 4px;
+}
+
+/* ═══════════════════════════════════════════════
+   ALERTA MODO PRUEBA
+   ═══════════════════════════════════════════════ */
+
+.mineduc-trial-warning {
+  margin: 8px 0;
+  padding: 8px 10px;
+  background: #fef3c7;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #92400e;
+}
+
+.mineduc-trial-warning a {
+  color: #d97706;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mineduc-trial-warning a:hover {
+  color: #b45309;
+}
+
+/* ═══════════════════════════════════════════════
+   MODAL PREMIUM — OVERLAY
+   ═══════════════════════════════════════════════ */
+
+.mineduc-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.mineduc-modal-overlay.visible {
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════
+   MODAL PREMIUM — CONTENEDOR
+   ═══════════════════════════════════════════════ */
+
+.mineduc-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2147483647;
+  width: 380px;
+  max-width: calc(100vw - 30px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #d6e5ff;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(14, 61, 140, 0.3);
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+  color: #123;
+}
+
+.mineduc-modal.visible {
+  display: block;
+  animation: mineducModalIn 0.2s ease-out;
+}
+
+@keyframes mineducModalIn {
+  from { opacity: 0; transform: translate(-50%, -48%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ─── HEADER ──────────────────────────────────── */
+
+.mineduc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid #e8f0fe;
+}
+
+.mineduc-modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #0f4aa1;
+}
+
+.mineduc-modal-close {
+  border: 1px solid #d6e5ff;
+  background: #eef5ff;
+  color: #0f4aa1;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mineduc-modal-close:hover {
+  background: #dce9ff;
+}
+
+/* ─── BODY ────────────────────────────────────── */
+
+.mineduc-modal-body {
+  padding: 14px 16px 18px;
+}
+
+.mineduc-modal-subtitle {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a365d;
+}
+
+.mineduc-modal-benefits ul {
+  margin: 0 0 8px;
+  padding-left: 6px;
+  list-style: none;
+}
+
+.mineduc-modal-benefits li {
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.mineduc-modal-price {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #0f4aa1;
+}
+
+.mineduc-modal-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 12px 0;
+}
+
+/* ─── GRID DE PAGOS ───────────────────────────── */
+
+.mineduc-modal-pay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mineduc-modal-pay-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.mineduc-modal-pay-btn:hover {
+  transform: translateY(-1px);
+}
+
+.mineduc-modal-pay-btn:active {
+  transform: translateY(0);
+}
+
+.mineduc-pay-payphone {
+  background: linear-gradient(145deg, #102a56, #1c5fb8);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(28, 95, 184, 0.25);
+}
+
+.mineduc-pay-paypal {
+  background: linear-gradient(145deg, #f7c64d, #ffdf8f);
+  color: #2b2b2b;
+  border: 1px solid #f2cb61;
+  box-shadow: 0 6px 12px rgba(189, 137, 25, 0.2);
+}
+
+.mineduc-pay-transfer {
+  background: #eef5ff;
+  color: #0f4aa1;
+  border: 1px solid #c5d8f0;
+}
+
+.mineduc-pay-whatsapp {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.mineduc-pay-whatsapp:hover {
+  background: #1fb855;
+}
+
+/* ─── INFO TRANSFERENCIA ──────────────────────── */
+
+.mineduc-transfer-info {
+  margin: 8px 0;
+  padding: 10px;
+  background: #f0f7ff;
+  border: 1px solid #c7daf5;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #1e3a5f;
+}
+
+.mineduc-transfer-info pre {
+  margin: 6px 0;
+  font-size: 12px;
+  white-space: pre-wrap;
+  color: #1a365d;
+}
+
+.mineduc-transfer-info small {
+  color: #4a6fa5;
+}
+
+/* ─── ACTIVAR LICENCIA (dentro del modal) ─────── */
+
+.mineduc-modal-license-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.mineduc-modal-license-input {
+  flex: 1;
+  border: 1px solid #bcd;
+  color: #123;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.mineduc-modal-license-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.mineduc-modal-activate-btn {
+  background: linear-gradient(145deg, #0f4aa1, #1f74e7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(15, 74, 161, 0.3);
+}
+
+.mineduc-modal-activate-btn:hover {
+  filter: brightness(1.05);
+}
+
+.mineduc-modal-activate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── MENSAJE DEL MODAL ──────────────────────── */
+
+.mineduc-modal-msg {
+  margin: 6px 0 0;
+  font-size: 12px;
+  min-height: 16px;
+  text-align: center;
+  color: #546e7a;
+}
+
+.mineduc-modal-msg.ok {
+  color: #166534;
+  font-weight: 600;
+}
+
+.mineduc-modal-msg.warn {
+  color: #c62828;
+}
+
+/* ─── GRID 2 COLUMNAS PARA MODAL ─────────────── */
+
+.mineduc-modal-pay-grid-2col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.mineduc-modal-pay-hint {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: #78909c;
+  margin-top: 6px;
+  line-height: 1.4;
+}
